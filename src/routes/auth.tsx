@@ -15,6 +15,8 @@ export const Route = createFileRoute("/auth")({
       { name: "description", content: "Sign in to your AI personal health coach." },
       { property: "og:title", content: "Sign in — Pulse Health Coach" },
       { property: "og:description", content: "Sign in to your AI personal health coach." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: AuthPage,

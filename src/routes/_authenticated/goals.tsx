@@ -11,7 +11,7 @@ import { fitQuery, goalProgress, goalsQuery, METRICS, type MetricKey } from "@/l
 import { supabase } from "@/integrations/supabase/client";
 
 export const Route = createFileRoute("/_authenticated/goals")({
-  head: () => ({ meta: [{ title: "Goals — Pulse" }, { name: "description", content: "Set and track your health goals." }] }),
+  head: () => ({ meta: [{ title: "Goals — Pulse" }, { name: "description", content: "Set and track your health goals." }, { property: "og:title", content: "Goals — Pulse" }, { property: "og:description", content: "Track your progress toward personal activity and sleep goals." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" }] }),
   loader: ({ context }) => Promise.all([context.queryClient.ensureQueryData(goalsQuery), context.queryClient.ensureQueryData(fitQuery)]),
   component: Goals,
 });

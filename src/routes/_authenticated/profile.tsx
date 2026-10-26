@@ -10,7 +10,7 @@ import { profileQuery } from "@/lib/queries";
 import { supabase } from "@/integrations/supabase/client";
 
 export const Route = createFileRoute("/_authenticated/profile")({
-  head: () => ({ meta: [{ title: "Profile — Pulse" }, { name: "description", content: "Your health profile." }] }),
+  head: () => ({ meta: [{ title: "Profile — Pulse" }, { name: "description", content: "Your health profile." }, { property: "og:title", content: "Profile — Pulse" }, { property: "og:description", content: "Manage your health details and personal coaching preferences." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" }] }),
   loader: ({ context }) => context.queryClient.ensureQueryData(profileQuery),
   component: Profile,
 });

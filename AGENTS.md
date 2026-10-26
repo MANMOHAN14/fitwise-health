@@ -11,3 +11,4 @@
 
 - Google Fit data is simulated server-side (`src/lib/simulate.ts` via `syncGoogleFit`) because the real Google Fit API is being retired; keep the sync behind one server function so a real source can replace it.
 - AI calls go through `src/lib/ai.server.ts` (Lovable AI Gateway, Responses API), imported dynamically inside authenticated server functions so keys never reach the browser.
+- Weekly plans retain their generated markdown and derive checkable day items in presentation code; completion is stored per user and plan on the current device to avoid altering plan generation or database behavior for UI enhancements.

@@ -1,0 +1,2 @@
+- [x] Add daily meal/workout checkmarks and category icons to weekly plans.
+- [x] Add daily wellness encouragement and verify saved progress in the signed-in plan.
