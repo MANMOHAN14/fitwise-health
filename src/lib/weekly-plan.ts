@@ -13,7 +13,7 @@ export function parseWeeklyPlan(content: string): ParsedPlan {
   let current: PlanDay | undefined;
   for (const line of content.split("\n")) {
     const heading = line.match(dayHeading);
-    if (heading) {
+    if (heading?.[1]) {
       current = { name: heading[1].replace(/\*\*/g, "").trim(), items: [], notes: "" };
       days.push(current);
       continue;
@@ -22,6 +22,7 @@ export function parseWeeklyPlan(content: string): ParsedPlan {
     const labels = [...line.matchAll(categoryLabel)];
     if (labels.length) {
       labels.forEach((match, index) => {
+        if (!match[1]) return;
         const category = match[1].toLowerCase() as PlanCategory;
         const start = (match.index ?? 0) + match[0].length;
         const text = line.slice(start, labels[index + 1]?.index ?? line.length).trim();
