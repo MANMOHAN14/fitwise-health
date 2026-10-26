@@ -27,13 +27,13 @@ function Goals() {
     e.preventDefault();
     const { data: u } = await supabase.auth.getUser();
     const { error } = await supabase.from("goals").insert({ user_id: u.user!.id, metric, target: Number(target) });
-    if (error) return toast.error(error.message);
+    if (error) { toast.error(error.message); return; }
     toast.success("Goal added");
     qc.invalidateQueries({ queryKey: ["goals"] });
   }
   async function remove(id: string) {
     const { error } = await supabase.from("goals").delete().eq("id", id);
-    if (error) return toast.error(error.message);
+    if (error) { toast.error(error.message); return; }
     qc.invalidateQueries({ queryKey: ["goals"] });
   }
 

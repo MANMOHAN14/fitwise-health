@@ -36,7 +36,7 @@ function Profile() {
       weight_kg: num(f.weight_kg),
       fitness_goal: f.fitness_goal,
     }).eq("id", p!.id);
-    if (error) return toast.error(error.message);
+    if (error) { toast.error(error.message); return; }
     toast.success("Profile saved");
     qc.invalidateQueries({ queryKey: ["profile"] });
   }

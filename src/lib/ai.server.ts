@@ -6,7 +6,7 @@ const MODEL = "openai/gpt-6-astra";
 
 /** Streams a Responses call through the Lovable AI Gateway and returns the final text. */
 export async function askCoach(instructions: string, messages: ModelMessage[]): Promise<string> {
-  const apiKey = process.env.LOVABLE_API_KEY;
+  const apiKey = process.env['LOVABLE_API_KEY'];
   if (!apiKey) throw new Error("AI is not configured (missing LOVABLE_API_KEY).");
   let runId: string | undefined;
   const provider = createOpenAI({

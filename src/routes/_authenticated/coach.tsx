@@ -54,7 +54,7 @@ function Coach() {
 
   async function clear() {
     const { error } = await supabase.from("chat_messages").delete().not("id", "is", null);
-    if (error) return toast.error(error.message);
+    if (error) { toast.error(error.message); return; }
     qc.invalidateQueries({ queryKey: ["chat"] });
   }
 
