@@ -10,7 +10,7 @@ import { fitQuery, goalProgress, goalsQuery, METRICS, profileQuery, type MetricK
 import { syncGoogleFit } from "@/lib/health.functions";
 
 export const Route = createFileRoute("/_authenticated/dashboard")({
-  head: () => ({ meta: [{ title: "Dashboard — Pulse" }, { name: "description", content: "Your Google Fit health dashboard." }] }),
+  head: () => ({ meta: [{ title: "Dashboard — Pulse" }, { name: "description", content: "Your Google Fit health dashboard." }, { property: "og:title", content: "Dashboard — Pulse" }, { property: "og:description", content: "Your activity, sleep and health goals at a glance." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" }] }),
   loader: ({ context }) =>
     Promise.all([
       context.queryClient.ensureQueryData(fitQuery),

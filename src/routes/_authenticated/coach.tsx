@@ -13,7 +13,7 @@ import { sendCoachMessage } from "@/lib/health.functions";
 import { supabase } from "@/integrations/supabase/client";
 
 export const Route = createFileRoute("/_authenticated/coach")({
-  head: () => ({ meta: [{ title: "AI Coach — Pulse" }, { name: "description", content: "Chat with your AI health coach." }] }),
+  head: () => ({ meta: [{ title: "AI Coach — Pulse" }, { name: "description", content: "Chat with your AI health coach." }, { property: "og:title", content: "AI Coach — Pulse" }, { property: "og:description", content: "Personal health advice based on your activity and goals." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" }] }),
   loader: ({ context }) => context.queryClient.ensureQueryData(chatQuery),
   component: Coach,
 });
