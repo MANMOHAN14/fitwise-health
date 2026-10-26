@@ -57,6 +57,8 @@ The project uses a modern TypeScript-based web development stack.
 
 ## 🚀 Getting Started
 
+For Vercel hosting, follow [the deployment guide](./DEPLOYMENT.md).
+
 Follow these steps to run the project locally.
 
 ### Prerequisites

@@ -1,2 +1,4 @@
 - [x] Add daily meal/workout checkmarks and category icons to weekly plans.
 - [x] Add daily wellness encouragement and verify saved progress in the signed-in plan.
+- [x] Prepare Vercel hosting configuration and deployment instructions.
+- [ ] Deploy on Vercel (requires the user's Vercel account access).
